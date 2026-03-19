@@ -1,5 +1,5 @@
 import React from "react";
-import { markdown } from "markdown";
+import { marked } from "marked";
 
 const scoreButtonStyle = {
   padding: "0 0px 5px 5px",
@@ -27,7 +27,7 @@ function Review({ review, deleteReview, setReviewScore }) {
         <small> of {critic.organization_name}</small>
       </h4>
       <p
-        dangerouslySetInnerHTML={{ __html: markdown.toHTML(review.content) }}
+        dangerouslySetInnerHTML={{ __html: marked(review.content) }}
       />
       <p>
         <strong>Rating:</strong> {review.score}
